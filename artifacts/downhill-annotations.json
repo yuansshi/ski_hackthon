@@ -1,0 +1,488 @@
+{
+  "course": {
+    "length_m": 2349,
+    "start_altitude_m": 3459,
+    "finish_altitude_m": 2846
+  },
+  "notes": [
+    "Course dimensions come from the organizer starter pack. Local video timestamps are visual annotations from source frames.",
+    "The first sustained push through the start-house opening marks the estimated start. The wand itself is indistinct.",
+    "POS8 ends on the course before the finish. The first transverse blue line below the overhead STIFEL sign is a matched landmark.",
+    "Visibility intervals cover the footage used for telemetry. Short foreground occlusions are retained where the skier resumes."
+  ],
+  "runs": [
+    {
+      "athlete": "Ryan Cochran-Siegle",
+      "start": {
+        "source": "RYACOC_251203_BEAVERCREEK_DH_GJNKJ2_POS1.MP4",
+        "video_s": 2.56,
+        "uncertainty_s": 0.15
+      },
+      "clips": [
+        {
+          "source": "RYACOC_251203_BEAVERCREEK_DH_GJNKJ2_POS1.MP4",
+          "visible_start_s": 2.56,
+          "visible_end_s": 13.3
+        },
+        {
+          "source": "RYACOC_251203_BEAVERCREEK_DH_GJNKJ2_POS1.MP4",
+          "visible_start_s": 15.7,
+          "visible_end_s": 22.5
+        },
+        {
+          "source": "RYACOC_251203_BEAVERCREEK_DH_GJNKJ2_POS1.MP4",
+          "visible_start_s": 24.5,
+          "visible_end_s": 25.6
+        },
+        {
+          "source": "RYACOC_251203_BEAVERCREEK_DH_GJNKJ2_POS2.MP4",
+          "visible_start_s": 10.5,
+          "visible_end_s": 15.5
+        },
+        {
+          "source": "RYACOC_251203_BEAVERCREEK_DH_GJNKJ2_POS2.MP4",
+          "visible_start_s": 17,
+          "visible_end_s": 26
+        },
+        {
+          "source": "RYACOC_251203_BEAVERCREEK_DH_GJNKJ2_POS3.MP4",
+          "visible_start_s": 2.9,
+          "visible_end_s": 19.1
+        },
+        {
+          "source": "RYACOC_251203_BEAVERCREEK_DH_GJNKJ2_POS4.MP4",
+          "visible_start_s": 3,
+          "visible_end_s": 22
+        },
+        {
+          "source": "RYACOC_251203_BEAVERCREEK_DH_GJNKJ2_POS5.MP4",
+          "visible_start_s": 17.8,
+          "visible_end_s": 24.0
+        },
+        {
+          "source": "RYACOC_251203_BEAVERCREEK_DH_GJNKJ2_POS6.mp4",
+          "visible_start_s": 2.4,
+          "visible_end_s": 14.4
+        },
+        {
+          "source": "RYACOC_251203_BEAVERCREEK_DH_GJNKJ2_POS7.MP4",
+          "visible_start_s": 1,
+          "visible_end_s": 17.5
+        },
+        {
+          "source": "RYACOC_251203_BEAVERCREEK_DH_GJNKJ2_POS8.MP4",
+          "visible_start_s": 0,
+          "visible_end_s": 15.6
+        }
+      ],
+      "landmarks": [
+        {
+          "name": "pos1_paired_red_gates",
+          "source": "RYACOC_251203_BEAVERCREEK_DH_GJNKJ2_POS1.MP4",
+          "video_s": 8.3,
+          "uncertainty_s": 0.06
+        },
+        {
+          "name": "pos2_red_gate_by_safety_fence",
+          "source": "RYACOC_251203_BEAVERCREEK_DH_GJNKJ2_POS2.MP4",
+          "video_s": 22.76,
+          "uncertainty_s": 0.1
+        },
+        {
+          "name": "pos3_paired_red_gates",
+          "source": "RYACOC_251203_BEAVERCREEK_DH_GJNKJ2_POS3.MP4",
+          "video_s": 7.08,
+          "uncertainty_s": 0.12
+        },
+        {
+          "name": "pos4_middle_red_gate",
+          "source": "RYACOC_251203_BEAVERCREEK_DH_GJNKJ2_POS4.MP4",
+          "video_s": 7.925,
+          "uncertainty_s": 0.1
+        },
+        {
+          "name": "pos5_celsius_red_gate",
+          "source": "RYACOC_251203_BEAVERCREEK_DH_GJNKJ2_POS5.MP4",
+          "video_s": 22.12,
+          "uncertainty_s": 0.1
+        },
+        {
+          "name": "pos6_transverse_blue_at_red_flag",
+          "source": "RYACOC_251203_BEAVERCREEK_DH_GJNKJ2_POS6.mp4",
+          "video_s": 11.04,
+          "uncertainty_s": 0.08
+        },
+        {
+          "name": "pos7_inner_red_gate_after_snow_post",
+          "source": "RYACOC_251203_BEAVERCREEK_DH_GJNKJ2_POS7.MP4",
+          "video_s": 14.08,
+          "uncertainty_s": 0.08
+        },
+        {
+          "name": "pos8_stifel_transverse_blue",
+          "source": "RYACOC_251203_BEAVERCREEK_DH_GJNKJ2_POS8.MP4",
+          "video_s": 7.92,
+          "uncertainty_s": 0.08
+        }
+      ]
+    },
+    {
+      "athlete": "Bryce Bennett",
+      "start": {
+        "source": "BRYBEN_251203_BEAVERCREEK_DH_GJNKJ2_POS1.MP4",
+        "video_s": 2.38,
+        "uncertainty_s": 0.15
+      },
+      "clips": [
+        {
+          "source": "BRYBEN_251203_BEAVERCREEK_DH_GJNKJ2_POS1.MP4",
+          "visible_start_s": 2.38,
+          "visible_end_s": 13.1
+        },
+        {
+          "source": "BRYBEN_251203_BEAVERCREEK_DH_GJNKJ2_POS1.MP4",
+          "visible_start_s": 15.7,
+          "visible_end_s": 22.5
+        },
+        {
+          "source": "BRYBEN_251203_BEAVERCREEK_DH_GJNKJ2_POS1.MP4",
+          "visible_start_s": 24.3,
+          "visible_end_s": 25.3
+        },
+        {
+          "source": "BRYBEN_251203_BEAVERCREEK_DH_GJNKJ2_POS2.MP4",
+          "visible_start_s": 11.5,
+          "visible_end_s": 16.5
+        },
+        {
+          "source": "BRYBEN_251203_BEAVERCREEK_DH_GJNKJ2_POS2.MP4",
+          "visible_start_s": 17.5,
+          "visible_end_s": 26
+        },
+        {
+          "source": "BRYBEN_251203_BEAVERCREEK_DH_GJNKJ2_POS3.MP4",
+          "visible_start_s": 2.6,
+          "visible_end_s": 19.4
+        },
+        {
+          "source": "BRYBEN_251203_BEAVERCREEK_DH_GJNKJ2_POS4.MP4",
+          "visible_start_s": 4,
+          "visible_end_s": 26
+        },
+        {
+          "source": "BRYBEN_251203_BEAVERCREEK_DH_GJNKJ2_POS5.MP4",
+          "visible_start_s": 18.64,
+          "visible_end_s": 23.7
+        },
+        {
+          "source": "BRYBEN_251203_BEAVERCREEK_DH_GJNKJ2_POS6.mp4",
+          "visible_start_s": 2.4,
+          "visible_end_s": 14.8
+        },
+        {
+          "source": "BRYBEN_251203_BEAVERCREEK_DH_GJNKJ2_POS7.MP4",
+          "visible_start_s": 1.5,
+          "visible_end_s": 17.5
+        },
+        {
+          "source": "BRYBEN_251203_BEAVERCREEK_DH_GJNKJ2_POS8.MP4",
+          "visible_start_s": 0,
+          "visible_end_s": 15.6
+        }
+      ],
+      "landmarks": [
+        {
+          "name": "pos1_paired_red_gates",
+          "source": "BRYBEN_251203_BEAVERCREEK_DH_GJNKJ2_POS1.MP4",
+          "video_s": 8.25,
+          "uncertainty_s": 0.06
+        },
+        {
+          "name": "pos2_red_gate_by_safety_fence",
+          "source": "BRYBEN_251203_BEAVERCREEK_DH_GJNKJ2_POS2.MP4",
+          "video_s": 23.2,
+          "uncertainty_s": 0.1
+        },
+        {
+          "name": "pos3_paired_red_gates",
+          "source": "BRYBEN_251203_BEAVERCREEK_DH_GJNKJ2_POS3.MP4",
+          "video_s": 7.04,
+          "uncertainty_s": 0.12
+        },
+        {
+          "name": "pos4_middle_red_gate",
+          "source": "BRYBEN_251203_BEAVERCREEK_DH_GJNKJ2_POS4.MP4",
+          "video_s": 7.3,
+          "uncertainty_s": 0.1
+        },
+        {
+          "name": "pos5_celsius_red_gate",
+          "source": "BRYBEN_251203_BEAVERCREEK_DH_GJNKJ2_POS5.MP4",
+          "video_s": 23.06,
+          "uncertainty_s": 0.1
+        },
+        {
+          "name": "pos6_transverse_blue_at_red_flag",
+          "source": "BRYBEN_251203_BEAVERCREEK_DH_GJNKJ2_POS6.mp4",
+          "video_s": 11.32,
+          "uncertainty_s": 0.08
+        },
+        {
+          "name": "pos7_inner_red_gate_after_snow_post",
+          "source": "BRYBEN_251203_BEAVERCREEK_DH_GJNKJ2_POS7.MP4",
+          "video_s": 14.8,
+          "uncertainty_s": 0.08
+        },
+        {
+          "name": "pos8_stifel_transverse_blue",
+          "source": "BRYBEN_251203_BEAVERCREEK_DH_GJNKJ2_POS8.MP4",
+          "video_s": 7.9,
+          "uncertainty_s": 0.08
+        }
+      ]
+    },
+    {
+      "athlete": "Aleksander Aamodt Kilde",
+      "start": {
+        "source": "ALEKIL_251203_BEAVERCREEK_DH_GJNKJ2_POS1.MP4",
+        "video_s": 3.34,
+        "uncertainty_s": 0.15
+      },
+      "clips": [
+        {
+          "source": "ALEKIL_251203_BEAVERCREEK_DH_GJNKJ2_POS1.MP4",
+          "visible_start_s": 3.34,
+          "visible_end_s": 14.1
+        },
+        {
+          "source": "ALEKIL_251203_BEAVERCREEK_DH_GJNKJ2_POS1.MP4",
+          "visible_start_s": 16.7,
+          "visible_end_s": 23.5
+        },
+        {
+          "source": "ALEKIL_251203_BEAVERCREEK_DH_GJNKJ2_POS1.MP4",
+          "visible_start_s": 25.0,
+          "visible_end_s": 26.4
+        },
+        {
+          "source": "ALEKIL_251203_BEAVERCREEK_DH_GJNKJ2_POS2.MP4",
+          "visible_start_s": 11.5,
+          "visible_end_s": 16.5
+        },
+        {
+          "source": "ALEKIL_251203_BEAVERCREEK_DH_GJNKJ2_POS2.MP4",
+          "visible_start_s": 17.5,
+          "visible_end_s": 26
+        },
+        {
+          "source": "ALEKIL_251203_BEAVERCREEK_DH_GJNKJ2_POS3.MP4",
+          "visible_start_s": 2.9,
+          "visible_end_s": 19.4
+        },
+        {
+          "source": "ALEKIL_251203_BEAVERCREEK_DH_GJNKJ2_POS4.MP4",
+          "visible_start_s": 3.5,
+          "visible_end_s": 26
+        },
+        {
+          "source": "ALEKIL_251203_BEAVERCREEK_DH_GJNKJ2_POS5.MP4",
+          "visible_start_s": 16.8,
+          "visible_end_s": 23.9
+        },
+        {
+          "source": "ALEKIL_251203_BEAVERCREEK_DH_GJNKJ2_POS6.mp4",
+          "visible_start_s": 2.4,
+          "visible_end_s": 14.4
+        },
+        {
+          "source": "ALEKIL_251203_BEAVERCREEK_DH_GJNKJ2_POS7.MP4",
+          "visible_start_s": 1.5,
+          "visible_end_s": 17
+        },
+        {
+          "source": "ALEKIL_251203_BEAVERCREEK_DH_GJNKJ2_POS8.MP4",
+          "visible_start_s": 0,
+          "visible_end_s": 16.2
+        }
+      ],
+      "landmarks": [
+        {
+          "name": "pos1_paired_red_gates",
+          "source": "ALEKIL_251203_BEAVERCREEK_DH_GJNKJ2_POS1.MP4",
+          "video_s": 9.18,
+          "uncertainty_s": 0.06
+        },
+        {
+          "name": "pos2_red_gate_by_safety_fence",
+          "source": "ALEKIL_251203_BEAVERCREEK_DH_GJNKJ2_POS2.MP4",
+          "video_s": 23.5,
+          "uncertainty_s": 0.1
+        },
+        {
+          "name": "pos3_paired_red_gates",
+          "source": "ALEKIL_251203_BEAVERCREEK_DH_GJNKJ2_POS3.MP4",
+          "video_s": 7.38,
+          "uncertainty_s": 0.12
+        },
+        {
+          "name": "pos4_middle_red_gate",
+          "source": "ALEKIL_251203_BEAVERCREEK_DH_GJNKJ2_POS4.MP4",
+          "video_s": 7.51,
+          "uncertainty_s": 0.1
+        },
+        {
+          "name": "pos5_celsius_red_gate",
+          "source": "ALEKIL_251203_BEAVERCREEK_DH_GJNKJ2_POS5.MP4",
+          "video_s": 22.04,
+          "uncertainty_s": 0.1
+        },
+        {
+          "name": "pos6_transverse_blue_at_red_flag",
+          "source": "ALEKIL_251203_BEAVERCREEK_DH_GJNKJ2_POS6.mp4",
+          "video_s": 10.96,
+          "uncertainty_s": 0.08
+        },
+        {
+          "name": "pos7_inner_red_gate_after_snow_post",
+          "source": "ALEKIL_251203_BEAVERCREEK_DH_GJNKJ2_POS7.MP4",
+          "video_s": 13.3,
+          "uncertainty_s": 0.08
+        },
+        {
+          "name": "pos8_stifel_transverse_blue",
+          "source": "ALEKIL_251203_BEAVERCREEK_DH_GJNKJ2_POS8.MP4",
+          "video_s": 8.1,
+          "uncertainty_s": 0.08
+        }
+      ]
+    },
+    {
+      "athlete": "Erik Arvidsson",
+      "start": {
+        "source": "ERIARV_251203_BEAVERCREEK_DH_GJNKJ2_POS1.MP4",
+        "video_s": 3.46,
+        "uncertainty_s": 0.15
+      },
+      "clips": [
+        {
+          "source": "ERIARV_251203_BEAVERCREEK_DH_GJNKJ2_POS1.MP4",
+          "visible_start_s": 3.46,
+          "visible_end_s": 14.4
+        },
+        {
+          "source": "ERIARV_251203_BEAVERCREEK_DH_GJNKJ2_POS1.MP4",
+          "visible_start_s": 17.2,
+          "visible_end_s": 23.2
+        },
+        {
+          "source": "ERIARV_251203_BEAVERCREEK_DH_GJNKJ2_POS2.MP4",
+          "visible_start_s": 8.6,
+          "visible_end_s": 10.2
+        },
+        {
+          "source": "ERIARV_251203_BEAVERCREEK_DH_GJNKJ2_POS2.MP4",
+          "visible_start_s": 12.2,
+          "visible_end_s": 21.0
+        },
+        {
+          "source": "ERIARV_251203_BEAVERCREEK_DH_GJNKJ2_POS3.MP4",
+          "visible_start_s": 4.8,
+          "visible_end_s": 10.5
+        },
+        {
+          "source": "ERIARV_251203_BEAVERCREEK_DH_GJNKJ2_POS3.MP4",
+          "visible_start_s": 13.0,
+          "visible_end_s": 16.4
+        },
+        {
+          "source": "ERIARV_251203_BEAVERCREEK_DH_GJNKJ2_POS4.MP4",
+          "visible_start_s": 2.9,
+          "visible_end_s": 9.0
+        },
+        {
+          "source": "ERIARV_251203_BEAVERCREEK_DH_GJNKJ2_POS4.MP4",
+          "visible_start_s": 10.5,
+          "visible_end_s": 21.5
+        },
+        {
+          "source": "ERIARV_251203_BEAVERCREEK_DH_GJNKJ2_POS5.MP4",
+          "visible_start_s": 14.0,
+          "visible_end_s": 25.0
+        },
+        {
+          "source": "ERIARV_251203_BEAVERCREEK_DH_GJNKJ2_POS5.MP4",
+          "visible_start_s": 27.0,
+          "visible_end_s": 31.5
+        },
+        {
+          "source": "ERIARV_251203_BEAVERCREEK_DH_GJNKJ2_POS6.mp4",
+          "visible_start_s": 2.8,
+          "visible_end_s": 15.2
+        },
+        {
+          "source": "ERIARV_251203_BEAVERCREEK_DH_GJNKJ2_POS7.MP4",
+          "visible_start_s": 0,
+          "visible_end_s": 16.7
+        },
+        {
+          "source": "ERIARV_251203_BEAVERCREEK_DH_GJNKJ2_POS8.MP4",
+          "visible_start_s": 0,
+          "visible_end_s": 16.0
+        }
+      ],
+      "landmarks": [
+        {
+          "name": "pos1_paired_red_gates",
+          "source": "ERIARV_251203_BEAVERCREEK_DH_GJNKJ2_POS1.MP4",
+          "video_s": 9.38,
+          "uncertainty_s": 0.06
+        },
+        {
+          "name": "pos2_red_gate_by_safety_fence",
+          "source": "ERIARV_251203_BEAVERCREEK_DH_GJNKJ2_POS2.MP4",
+          "video_s": 17.9,
+          "uncertainty_s": 0.1
+        },
+        {
+          "name": "pos3_paired_red_gates",
+          "source": "ERIARV_251203_BEAVERCREEK_DH_GJNKJ2_POS3.MP4",
+          "video_s": 9.0,
+          "uncertainty_s": 0.12
+        },
+        {
+          "name": "pos4_middle_red_gate",
+          "source": "ERIARV_251203_BEAVERCREEK_DH_GJNKJ2_POS4.MP4",
+          "video_s": 6.75675,
+          "uncertainty_s": 0.1
+        },
+        {
+          "name": "pos5_celsius_red_gate",
+          "source": "ERIARV_251203_BEAVERCREEK_DH_GJNKJ2_POS5.MP4",
+          "video_s": 22.36,
+          "uncertainty_s": 0.1
+        },
+        {
+          "name": "pos6_transverse_blue_at_red_flag",
+          "source": "ERIARV_251203_BEAVERCREEK_DH_GJNKJ2_POS6.mp4",
+          "video_s": 11.32,
+          "uncertainty_s": 0.08
+        },
+        {
+          "name": "pos7_inner_red_gate_after_snow_post",
+          "source": "ERIARV_251203_BEAVERCREEK_DH_GJNKJ2_POS7.MP4",
+          "video_s": 12.74,
+          "uncertainty_s": 0.1
+        },
+        {
+          "name": "pos8_stifel_transverse_blue",
+          "source": "ERIARV_251203_BEAVERCREEK_DH_GJNKJ2_POS8.MP4",
+          "video_s": 8.32,
+          "uncertainty_s": 0.08
+        }
+      ],
+      "notes": [
+        "Held-out sample. POS3 crops the outer red panel, so the gate estimate uses the nearer panel and boot position."
+      ]
+    }
+  ]
+}
