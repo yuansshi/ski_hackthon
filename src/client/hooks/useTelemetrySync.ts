@@ -303,7 +303,8 @@ export function useTelemetrySync(
 
   // delta d(t) = d(s_A(t)) - d(s_B(t))
   const spatialGapMeters = Number(
-    (currentTemporalSampleA.distanceMeters - currentTemporalSampleB.distanceMeters).toFixed(1)
+    ((currentTemporalSampleA.normalizedProgress - currentTemporalSampleB.normalizedProgress) *
+      manifest.courseProfile.totalDistanceMeters).toFixed(1)
   );
 
   return {

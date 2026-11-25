@@ -146,6 +146,29 @@ video, canvas {
   background: #020617;
 }
 
+.slope-athlete-readouts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.slope-athlete-readout {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.35rem 0.5rem;
+  border-left: 2px solid currentColor;
+  border-radius: 0.25rem;
+  background: #0b1120;
+  font-size: 0.75rem;
+}
+
+.slope-athlete-a { color: #67e8f9; }
+.slope-athlete-b { color: #fcd34d; }
+.slope-athlete-readout dt { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.slope-athlete-readout dd { flex-shrink: 0; text-align: right; font-variant-numeric: tabular-nums; }
+
 @media (max-width: 620px) {
   .athlete-video-grid { grid-template-columns: 1fr; }
 }

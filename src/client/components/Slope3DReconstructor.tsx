@@ -62,6 +62,28 @@ function speedToColor(speedKmh: number, alpha = 1): string {
   return alpha >= 0.999 ? `rgb(${r}, ${g}, ${b})` : `rgba(${r}, ${g}, ${b}, ${alpha})`;
 }
 
+function sampleSpine(spine: SpinePoint3D[], progress: number): SpinePoint3D {
+  const clamped = Math.max(0, Math.min(1, progress));
+  const fIdx = clamped * (spine.length - 1);
+  const i0 = Math.floor(fIdx);
+  const i1 = Math.min(spine.length - 1, i0 + 1);
+  const t = fIdx - i0;
+  const p0 = spine[i0];
+  const p1 = spine[i1];
+  return {
+    s: clamped,
+    wx: p0.wx + (p1.wx - p0.wx) * t,
+    wy: p0.wy + (p1.wy - p0.wy) * t,
+    wz: p0.wz + (p1.wz - p0.wz) * t,
+    curvature: p0.curvature + (p1.curvature - p0.curvature) * t,
+    pitchPct: p0.pitchPct + (p1.pitchPct - p0.pitchPct) * t,
+    speedA: p0.speedA + (p1.speedA - p0.speedA) * t,
+    speedB: p0.speedB + (p1.speedB - p0.speedB) * t,
+    lineOffsetA: p0.lineOffsetA + (p1.lineOffsetA - p0.lineOffsetA) * t,
+    lineOffsetB: p0.lineOffsetB + (p1.lineOffsetB - p0.lineOffsetB) * t,
+  };
+}
+
 export const Slope3DReconstructor: React.FC<Slope3DReconstructorProps> = ({
   course,
   samplesA,
@@ -181,7 +203,6 @@ export const Slope3DReconstructor: React.FC<Slope3DReconstructorProps> = ({
 
     const W = canvas.width;
     const H = canvas.height;
-    ctx.clearRect(0, 0, W, H);
 
     // Sky & Alpine Mountain Backdrop Gradient
     const skyGrad = ctx.createLinearGradient(0, 0, 0, H * 0.36);
@@ -213,29 +234,7 @@ export const Slope3DReconstructor: React.FC<Slope3DReconstructorProps> = ({
     const trailS = Math.min(sA, sB);
     const totalLen = course.totalDistanceMeters || 2349.17;
 
-    const sampleSpine = (sQuery: number): SpinePoint3D => {
-      const clamped = Math.max(0, Math.min(1, sQuery));
-      const fIdx = clamped * (spine3D.length - 1);
-      const i0 = Math.floor(fIdx);
-      const i1 = Math.min(spine3D.length - 1, i0 + 1);
-      const t = fIdx - i0;
-      const p0 = spine3D[i0];
-      const p1 = spine3D[i1];
-      return {
-        s: clamped,
-        wx: p0.wx + (p1.wx - p0.wx) * t,
-        wy: p0.wy + (p1.wy - p0.wy) * t,
-        wz: p0.wz + (p1.wz - p0.wz) * t,
-        curvature: p0.curvature + (p1.curvature - p0.curvature) * t,
-        pitchPct: p0.pitchPct + (p1.pitchPct - p0.pitchPct) * t,
-        speedA: p0.speedA + (p1.speedA - p0.speedA) * t,
-        speedB: p0.speedB + (p1.speedB - p0.speedB) * t,
-        lineOffsetA: p0.lineOffsetA + (p1.lineOffsetA - p0.lineOffsetA) * t,
-        lineOffsetB: p0.lineOffsetB + (p1.lineOffsetB - p0.lineOffsetB) * t,
-      };
-    };
-
-    const refPt = sampleSpine(trailS);
+    const refPt = sampleSpine(spine3D, trailS);
     const yawRad = (chaseYawDeg * Math.PI) / 180;
     const cosY = Math.cos(yawRad);
     const sinY = Math.sin(yawRad);
@@ -249,7 +248,7 @@ export const Slope3DReconstructor: React.FC<Slope3DReconstructorProps> = ({
       aheadMeters: number,
       heightAboveSnowM = 0
     ): { sx: number; sy: number; scale: number; depth: number } => {
-      const ptAhead = sampleSpine(trailS + aheadMeters / totalLen);
+      const ptAhead = sampleSpine(spine3D, trailS + aheadMeters / totalLen);
       const curveBendM =
         (ptAhead.curvature - refPt.curvature * 0.25) *
         Math.max(0, aheadMeters) *
@@ -275,7 +274,7 @@ export const Slope3DReconstructor: React.FC<Slope3DReconstructorProps> = ({
       const sSlice = trailS + dM / totalLen;
       if (sSlice < -0.02 || sSlice > 1.02) continue;
 
-      const slicePt = sampleSpine(sSlice);
+      const slicePt = sampleSpine(spine3D, sSlice);
       const pFL = projectSlope3D(-corridorHalfWidthM, dFar, 0);
       const pFR = projectSlope3D(corridorHalfWidthM, dFar, 0);
       const pNL = projectSlope3D(-corridorHalfWidthM, dM, 0);
@@ -298,8 +297,7 @@ export const Slope3DReconstructor: React.FC<Slope3DReconstructorProps> = ({
 
       // Main 3D Groomed Snow Slope Quad
       const distFade = Math.max(0.18, Math.min(1, 1 - dM / 100));
-      const stripe = Math.floor((sSlice * totalLen) / 5) % 2 === 0;
-      const baseLuma = stripe ? 38 : 32;
+      const baseLuma = 35;
       const rSnow = Math.round(baseLuma * distFade + 12);
       const gSnow = Math.round((baseLuma + 14) * distFade + 18);
       const bSnow = Math.round((baseLuma + 34) * distFade + 30);
@@ -345,14 +343,14 @@ export const Slope3DReconstructor: React.FC<Slope3DReconstructorProps> = ({
 
       // 3D Speed Heatmap Ribbon & Dual Carved Ski Tracks on the Snow
       const pTrackFarA = projectSlope3D(
-        sampleSpine(sSlice + stepM / totalLen).lineOffsetA,
+        sampleSpine(spine3D, sSlice + stepM / totalLen).lineOffsetA,
         dFar,
         0.04
       );
       const pTrackNearA = projectSlope3D(slicePt.lineOffsetA, dM, 0.04);
 
       const pTrackFarB = projectSlope3D(
-        sampleSpine(sSlice + stepM / totalLen).lineOffsetB,
+        sampleSpine(spine3D, sSlice + stepM / totalLen).lineOffsetB,
         dFar,
         0.04
       );
@@ -378,7 +376,7 @@ export const Slope3DReconstructor: React.FC<Slope3DReconstructorProps> = ({
       const gateAheadM = (gate.normalizedProgress - trailS) * totalLen;
       if (gateAheadM < -4 || gateAheadM > 84) continue;
 
-      const gateSpine = sampleSpine(gate.normalizedProgress);
+      const gateSpine = sampleSpine(spine3D, gate.normalizedProgress);
       const gateCenterX = gateSpine.lineOffsetA * 0.45;
       const gateColor =
         gate.color === 'BLUE'
@@ -429,24 +427,19 @@ export const Slope3DReconstructor: React.FC<Slope3DReconstructorProps> = ({
       ctx.fillText(`G${gate.gateNumber}`, pGateTag.sx, pGateTag.sy);
     }
 
-    // Position both skiers in the mid-ground of the 3D slope:
-    // Trailing skier sits at +3.5m in front of camera baseline; Leading skier sits further down the slope at +3.5m + visualGapM
-    const ptA = sampleSpine(sA);
-    const ptB = sampleSpine(sB);
-    const visualGapM = Math.min(30, Math.max(4.5, Math.abs(spatialGapMeters) * 1.15));
-
-    const aheadMA = spatialGapMeters >= 0 ? 3.5 + visualGapM : 3.5;
-    const aheadMB = spatialGapMeters >= 0 ? 3.5 : 3.5 + visualGapM;
+    const ptA = sampleSpine(spine3D, sA);
+    const ptB = sampleSpine(spine3D, sB);
+    const maxVisibleGap = 30;
+    const gap = Math.max(-maxVisibleGap, Math.min(maxVisibleGap, (sA - sB) * totalLen));
+    const aheadMA = 3.5 + Math.max(0, gap);
+    const aheadMB = 3.5 + Math.max(0, -gap);
 
     const posA3D = projectSlope3D(ptA.lineOffsetA, aheadMA, 0);
     const posB3D = projectSlope3D(ptB.lineOffsetB, aheadMB, 0);
 
-    // Draw 3D On-Snow Laser Distance Tether between Main Skier A and Ghost Skier B
-    const isMainAhead = ghostDeltaSec <= 0;
+    // Connect the modeled skier positions on the slope.
     ctx.save();
-    ctx.strokeStyle = isMainAhead
-      ? 'rgba(16, 185, 129, 0.92)'
-      : 'rgba(244, 63, 94, 0.92)';
+    ctx.strokeStyle = 'rgba(148, 163, 184, 0.85)';
     ctx.lineWidth = 2.4;
     ctx.setLineDash([6, 4]);
     ctx.beginPath();
@@ -464,10 +457,10 @@ export const Slope3DReconstructor: React.FC<Slope3DReconstructorProps> = ({
     ctx.beginPath();
     ctx.roundRect(midX - gTw * 0.5, midY - 9, gTw, 18, 5);
     ctx.fill();
-    ctx.strokeStyle = isMainAhead ? '#10b981' : '#f43f5e';
+    ctx.strokeStyle = '#64748b';
     ctx.lineWidth = 1.2;
     ctx.stroke();
-    ctx.fillStyle = isMainAhead ? '#34d399' : '#fb7185';
+    ctx.fillStyle = '#e2e8f0';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.fillText(gapLabel, midX, midY);
@@ -478,9 +471,7 @@ export const Slope3DReconstructor: React.FC<Slope3DReconstructorProps> = ({
       aheadM: number,
       curvature: number,
       speedKmh: number,
-      label: string,
-      isGhost: boolean,
-      avoidY?: number
+      isGhost: boolean
     ) => {
       const pFoot = projectSlope3D(lateralM, aheadM, 0);
       const pHip = projectSlope3D(lateralM, aheadM - 0.25, 0.85);
@@ -579,74 +570,17 @@ export const Slope3DReconstructor: React.FC<Slope3DReconstructorProps> = ({
         3 * sc
       );
 
-      // 6. Floating 3D Telemetry Callout
-      ctx.globalAlpha = 1.0;
-      ctx.font = 'bold 10px "JetBrains Mono", monospace';
-      const tw = ctx.measureText(label).width + 12;
-      let tagY = Math.max(20, shoulderY - 22 * sc);
-      if (avoidY !== undefined && Math.abs(tagY - avoidY) < 21) {
-        tagY = Math.max(18, avoidY - 21);
-      }
-      const tagX = Math.max(tw * 0.5 + 8, Math.min(W - tw * 0.5 - 8, shoulderX));
-
-      ctx.fillStyle = isGhost
-        ? 'rgba(69, 26, 3, 0.92)'
-        : 'rgba(8, 51, 68, 0.92)';
-      ctx.beginPath();
-      ctx.roundRect(tagX - tw * 0.5, tagY - 9, tw, 18, 4);
-      ctx.fill();
-      ctx.strokeStyle = isGhost ? '#f59e0b' : '#06b6d4';
-      ctx.lineWidth = 1.2;
-      ctx.stroke();
-      ctx.fillStyle = isGhost ? '#fde68a' : '#67e8f9';
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      ctx.fillText(label, tagX, tagY);
-
       ctx.restore();
-      return tagY;
     };
 
-    const mainLabel = `MAIN • ${athleteAName.split(' ').pop()?.toUpperCase()} (${Math.round(spatialSampleA.speedKmh)} km/h)`;
-    const ghostLabel = `GHOST • ${athleteBName.split(' ').pop()?.toUpperCase()} (${Math.round(spatialSampleB.speedKmh)} km/h)`;
-
-    // Painter's algorithm: draw further-downhill skier first, closer-uphill skier second
+    const drawA = () => draw3DSkierAvatar(ptA.lineOffsetA, aheadMA, ptA.curvature, spatialSampleA.speedKmh, false);
+    const drawB = () => draw3DSkierAvatar(ptB.lineOffsetB, aheadMB, ptB.curvature, spatialSampleB.speedKmh, true);
     if (aheadMB >= aheadMA) {
-      const gY = draw3DSkierAvatar(
-        ptB.lineOffsetB,
-        aheadMB,
-        ptB.curvature,
-        spatialSampleB.speedKmh,
-        ghostLabel,
-        true
-      );
-      draw3DSkierAvatar(
-        ptA.lineOffsetA,
-        aheadMA,
-        ptA.curvature,
-        spatialSampleA.speedKmh,
-        mainLabel,
-        false,
-        gY
-      );
+      drawB();
+      drawA();
     } else {
-      const mY = draw3DSkierAvatar(
-        ptA.lineOffsetA,
-        aheadMA,
-        ptA.curvature,
-        spatialSampleA.speedKmh,
-        mainLabel,
-        false
-      );
-      draw3DSkierAvatar(
-        ptB.lineOffsetB,
-        aheadMB,
-        ptB.curvature,
-        spatialSampleB.speedKmh,
-        ghostLabel,
-        true,
-        mY
-      );
+      drawA();
+      drawB();
     }
 
     // Top-Left 3D Slope Telemetry HUD Overlay
@@ -682,8 +616,6 @@ export const Slope3DReconstructor: React.FC<Slope3DReconstructorProps> = ({
     spatialSampleB,
     spatialGapMeters,
     ghostDeltaSec,
-    athleteAName,
-    athleteBName,
     course,
     chaseYawDeg,
   ]);
@@ -698,7 +630,6 @@ export const Slope3DReconstructor: React.FC<Slope3DReconstructorProps> = ({
 
     const W = canvas.width;
     const H = canvas.height;
-    ctx.clearRect(0, 0, W, H);
 
     const bgGrad = ctx.createLinearGradient(0, 0, 0, H);
     bgGrad.addColorStop(0, '#020617');
@@ -884,16 +815,8 @@ export const Slope3DReconstructor: React.FC<Slope3DReconstructorProps> = ({
     }
 
     // 5. Draw 3D Active Skier Beacons
-    const idxA = Math.min(
-      spine3D.length - 1,
-      Math.round(temporalSampleA.normalizedProgress * (spine3D.length - 1))
-    );
-    const idxB = Math.min(
-      spine3D.length - 1,
-      Math.round(temporalSampleB.normalizedProgress * (spine3D.length - 1))
-    );
-    const ptA = spine3D[idxA];
-    const ptB = spine3D[idxB];
+    const ptA = sampleSpine(spine3D, temporalSampleA.normalizedProgress);
+    const ptB = sampleSpine(spine3D, temporalSampleB.normalizedProgress);
 
     const scrB = projectIso3D(ptB.wx, ptB.wy, ptB.wz);
     const scrBTop = projectIso3D(ptB.wx, ptB.wy, ptB.wz, 0.22);
@@ -927,39 +850,6 @@ export const Slope3DReconstructor: React.FC<Slope3DReconstructorProps> = ({
     ctx.lineWidth = 1.5;
     ctx.stroke();
 
-    // Floating 3D Pin Callouts
-    ctx.font = 'bold 10px "JetBrains Mono", monospace';
-    const labelA = `${athleteAName.split(' ').pop()?.toUpperCase()} ${Math.round(spatialSampleA.speedKmh)} km/h`;
-    const wA = ctx.measureText(labelA).width + 10;
-    const aTagX = Math.max(wA * 0.5 + 6, Math.min(W - wA * 0.5 - 6, scrATop.sx));
-    ctx.fillStyle = 'rgba(8, 51, 68, 0.92)';
-    ctx.beginPath();
-    ctx.roundRect(aTagX - wA * 0.5, scrATop.sy - 16, wA, 16, 4);
-    ctx.fill();
-    ctx.strokeStyle = '#06b6d4';
-    ctx.lineWidth = 1;
-    ctx.stroke();
-    ctx.fillStyle = '#67e8f9';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.fillText(labelA, aTagX, scrATop.sy - 8);
-
-    const labelB = `GHOST ${Math.round(spatialSampleB.speedKmh)} km/h`;
-    const wB = ctx.measureText(labelB).width + 10;
-    const bTagX = Math.max(wB * 0.5 + 6, Math.min(W - wB * 0.5 - 6, scrBTop.sx));
-    const bTagY =
-      Math.abs(scrBTop.sy - scrATop.sy) < 18
-        ? scrBTop.sy + 8
-        : scrBTop.sy - 16;
-    ctx.fillStyle = 'rgba(69, 26, 3, 0.92)';
-    ctx.beginPath();
-    ctx.roundRect(bTagX - wB * 0.5, bTagY, wB, 16, 4);
-    ctx.fill();
-    ctx.strokeStyle = '#f59e0b';
-    ctx.stroke();
-    ctx.fillStyle = '#fde68a';
-    ctx.fillText(labelB, bTagX, bTagY + 8);
-
     // Top-Left 3D Mountain Title & Bottom Speed Legend Bar
     ctx.textAlign = 'left';
     ctx.fillStyle = '#94a3b8';
@@ -990,10 +880,6 @@ export const Slope3DReconstructor: React.FC<Slope3DReconstructorProps> = ({
     spine3D,
     temporalSampleA,
     temporalSampleB,
-    spatialSampleA,
-    spatialSampleB,
-    athleteAName,
-    course,
     mountainYawDeg,
     mountainPitchDeg,
   ]);
@@ -1138,6 +1024,17 @@ export const Slope3DReconstructor: React.FC<Slope3DReconstructorProps> = ({
           )}
         </div>
       </div>
+
+      <dl className="slope-athlete-readouts" aria-label="Skier speeds">
+        <div className="slope-athlete-readout slope-athlete-a">
+          <dt title={athleteAName}>{athleteAName}</dt>
+          <dd>{Math.round(spatialSampleA.speedKmh)} km/h</dd>
+        </div>
+        <div className="slope-athlete-readout slope-athlete-b">
+          <dt title={athleteBName}>{athleteBName}</dt>
+          <dd>{Math.round(spatialSampleB.speedKmh)} km/h</dd>
+        </div>
+      </dl>
 
       {/* 3D Canvases Container */}
       <div className="flex flex-1 flex-col gap-2">
