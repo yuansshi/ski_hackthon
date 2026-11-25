@@ -1,0 +1,25 @@
+node_modules/
+dist/
+.wrangler/
+coverage/
+playwright-report/
+.playwright-cli/
+test-results/
+.audit/
+public/clips/*.mp4
+!public/clips/downhill-comparison.mp4
+!public/clips/dh-athlete-a.mp4
+!public/clips/dh-athlete-b.mp4
+!public/clips/sg-athlete-a.mp4
+!public/clips/sg-athlete-b.mp4
+public/clips/*.duration
+public/clips/raw_pos/
+artifacts/**/*.mp4
+artifacts/**/*.MP4
+artifacts/**/*.mov
+artifacts/**/*.MOV
+artifacts/downhill-telemetry/
+Beaver Creek Downhill Video-*.zip
+Beaver Creek Downhill GPS Data*.zip
+Beaver Creek Downhill GPS Data/
+.DS_Store

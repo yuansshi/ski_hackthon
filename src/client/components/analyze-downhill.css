@@ -1,0 +1,372 @@
+.downhill-workbench {
+  --downhill-ink: #eaf4fe;
+  --downhill-quiet: #aabacf;
+  --downhill-field: #0a1524;
+  --downhill-line: #2b3c51;
+  --downhill-ice: #7bddff;
+  --downhill-amber: #ffc77c;
+  color: var(--downhill-ink);
+  max-width: 1400px;
+  margin: 14px auto 26px;
+  padding: clamp(16px, 3vw, 32px);
+  border: 1px solid var(--downhill-line);
+  border-radius: 12px;
+  background: #0e1b2c;
+}
+
+.downhill-workbench h2,
+.downhill-workbench h3,
+.downhill-workbench h4 {
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  line-height: 1.15;
+}
+
+.downhill-workbench h2 { font-size: clamp(1.5rem, 3vw, 2.45rem); }
+.downhill-workbench h3 { font-size: 1.35rem; }
+.downhill-workbench h4 { font-size: 1.02rem; }
+
+.downhill-workbench p {
+  max-width: 72ch;
+  color: var(--downhill-quiet);
+  font-size: 0.88rem;
+}
+
+.downhill-workbench-header p,
+.downhill-calibration-header p,
+.downhill-result-header p,
+.downhill-result-notes p { margin-top: 7px; }
+
+.downhill-workbench-header { margin-bottom: 24px; }
+
+.downhill-workbench button,
+.downhill-workbench input:is([type="text"], [type="number"], :not([type])) {
+  border: 1px solid var(--downhill-line);
+  border-radius: 5px;
+  background: var(--downhill-field);
+}
+
+.downhill-workbench button {
+  padding: 6px 10px;
+  font-size: 0.8rem;
+  color: var(--downhill-ink);
+}
+
+.downhill-workbench button:hover:not(:disabled) { border-color: var(--downhill-ice); }
+
+.downhill-workbench :is(button, input, summary, video):focus-visible,
+.downhill-upload:focus-within {
+  outline: 2px solid var(--downhill-ice);
+  outline-offset: 2px;
+}
+
+.downhill-workbench button.downhill-action {
+  background: var(--downhill-ice);
+  border-color: var(--downhill-ice);
+  color: #0a2031;
+  font-weight: 750;
+}
+
+.downhill-course {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 9rem));
+  gap: 12px;
+  border: 0;
+  min-inline-size: 0;
+}
+
+.downhill-course legend {
+  padding: 0;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.downhill-field {
+  min-width: 0;
+  display: grid;
+  gap: 4px;
+  font-size: 0.77rem;
+  color: var(--downhill-quiet);
+}
+
+.downhill-workbench .downhill-field input {
+  width: 100%;
+  min-width: 0;
+  padding: 7px 9px;
+  color: var(--downhill-ink);
+}
+
+.downhill-calibration,
+.downhill-comparison {
+  padding-top: 18px;
+  margin-top: 22px;
+  border-top: 1px solid var(--downhill-line);
+}
+
+.downhill-calibration-header,
+.downhill-result-header,
+.downhill-result-notes {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+}
+
+.downhill-inline {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.downhill-markbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 13px 0;
+}
+
+.downhill-markbar button[aria-pressed="true"] {
+  border-color: var(--downhill-ice);
+  color: var(--downhill-ice);
+}
+
+.downhill-markbar button span { color: var(--downhill-quiet); margin-left: 5px; }
+
+.downhill-mark-fields {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+  font-size: 0.83rem;
+}
+
+.downhill-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  align-items: start;
+}
+
+.downhill-ice { --downhill-racer: var(--downhill-ice); }
+.downhill-amber { --downhill-racer: var(--downhill-amber); }
+
+.downhill-racer {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid var(--downhill-line);
+  border-top: 2px solid var(--downhill-racer);
+  background: #101d2e;
+  border-radius: 6px;
+}
+
+.downhill-racer > .downhill-field span { color: var(--downhill-racer); }
+
+.downhill-upload {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  overflow: hidden;
+  min-height: 36px;
+  padding: 6px 9px;
+  border: 1px dashed var(--downhill-line);
+  border-radius: 5px;
+  font-size: 0.8rem;
+  color: var(--downhill-ink);
+}
+
+.downhill-upload small {
+  color: var(--downhill-quiet);
+  font-size: 0.72rem;
+}
+
+.downhill-upload input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.downhill-clip-list {
+  display: grid;
+  gap: 4px;
+  list-style: none;
+  max-height: 12rem;
+  overflow: auto;
+}
+
+.downhill-clip-row {
+  display: grid;
+  grid-template-columns: 3.1rem minmax(0, 1fr) auto auto;
+  gap: 4px;
+  align-items: center;
+}
+
+.downhill-clip-row input[type="number"] {
+  width: 100%;
+  min-width: 0;
+  padding: 3px 4px;
+  font-size: 0.76rem;
+}
+
+.downhill-clip-row span { overflow: hidden; }
+
+.downhill-clip-row b {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.7rem;
+}
+
+.downhill-clip-row small {
+  display: block;
+  color: var(--downhill-quiet);
+  font-size: 0.67rem;
+}
+
+.downhill-clip-row button {
+  padding: 3px 5px;
+  font-size: 0.68rem;
+}
+
+.downhill-clip-row button[aria-pressed="true"] { border-color: var(--downhill-racer); }
+
+.downhill-preview,
+.downhill-result-video {
+  display: grid;
+  place-items: center;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  color: var(--downhill-quiet);
+  text-align: center;
+  background: var(--downhill-field);
+  border: 1px solid #1f3249;
+  border-radius: 4px;
+}
+
+.downhill-preview span,
+.downhill-result-video span {
+  padding: 12px;
+  font-size: 0.78rem;
+}
+
+.downhill-preview video,
+.downhill-result-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.downhill-preview-controls { display: grid; gap: 7px; }
+.downhill-seek-time input[type="number"] {
+  width: 5rem;
+  padding: 4px 6px;
+  color: var(--downhill-ink);
+  font-size: 0.76rem;
+}
+.downhill-trim { font-size: 0.77rem; color: var(--downhill-quiet); }
+.downhill-trim summary { width: fit-content; cursor: pointer; }
+.downhill-trim[open] summary { margin-bottom: 5px; }
+
+.downhill-workbench output {
+  font-variant-numeric: tabular-nums;
+  font-size: 0.78rem;
+  color: var(--downhill-quiet);
+}
+
+.downhill-submit {
+  display: flex;
+  gap: 10px;
+  margin-top: 13px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.downhill-workbench .downhill-error { color: #ffb5a9; }
+.downhill-result-region:focus { outline: 0; }
+.downhill-result-header { margin-bottom: 12px; }
+.downhill-result-header output { color: var(--downhill-ink); font-weight: 700; }
+
+.downhill-result-pane {
+  border-top: 2px solid var(--downhill-racer);
+  background: var(--downhill-field);
+}
+
+.downhill-pane-header,
+.downhill-pane-timing {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 6px 10px;
+  font-size: 0.78rem;
+  color: var(--downhill-quiet);
+  font-variant-numeric: tabular-nums;
+}
+
+.downhill-pane-header b { font-size: 0.88rem; color: var(--downhill-racer); }
+.downhill-pane-timing strong { margin-left: 2px; color: var(--downhill-ink); }
+
+.downhill-transport {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) minmax(2.7rem, auto);
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.downhill-transport input { width: 100%; accent-color: var(--downhill-ice); }
+.downhill-transport output { text-align: right; }
+
+.downhill-trace-key { display: flex; gap: 8px 14px; flex-wrap: wrap; font-size: 0.72rem; }
+.downhill-trace-key span { color: var(--downhill-racer); }
+.downhill-trace { margin-top: 7px; }
+.downhill-trace figcaption { color: var(--downhill-ink); font-size: 0.74rem; }
+.downhill-trace figcaption span { color: var(--downhill-quiet); }
+.downhill-trace-plot { position: relative; }
+.downhill-trace canvas { width: 100%; height: 74px; }
+.downhill-trace-cursor-inset {
+  position: absolute;
+  inset: 0 7px 0 39px;
+  pointer-events: none;
+}
+
+.downhill-trace-cursor-inset span {
+  position: absolute;
+  inset-block: 0;
+  width: 1px;
+  background: #eef7ffb3;
+}
+
+.downhill-result-notes {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--downhill-line);
+}
+
+.downhill-downloads { display: flex; gap: 5px; flex-wrap: wrap; }
+
+.downhill-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (max-width: 620px) {
+  .downhill-pair { grid-template-columns: minmax(0, 1fr); }
+  .downhill-course { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .downhill-mark-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

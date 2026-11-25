@@ -1,0 +1,38 @@
+{
+  "name": "alpine-race-telemetry-coach",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "author": "yuansshi (https://github.com/yuansshi)",
+  "description": "Alpine Race Telemetry Coaching Tool for the Cloudflare x U.S. Ski & Snowboard Challenge",
+  "scripts": {
+    "dev": "vite",
+    "build:data": "tsx scripts/parse-superg-course.ts && tsx scripts/build-manifests.ts",
+    "build": "npm run build:data && npm run build:app",
+    "build:app": "tsc -b && vite build && node scripts/stage-pages-assets.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:e2e": "playwright test",
+    "deploy": "npm run build && wrangler pages deploy dist"
+  },
+  "dependencies": {
+    "mediabunny": "1.66.4",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "4.20241106.0",
+    "@playwright/test": "1.49.0",
+    "@types/node": "22.9.0",
+    "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.1",
+    "@vitejs/plugin-react": "4.3.3",
+    "@vitest/coverage-v8": "2.1.5",
+    "tsx": "4.19.2",
+    "typescript": "5.6.3",
+    "vite": "5.4.11",
+    "vitest": "2.1.5",
+    "wrangler": "3.91.0"
+  }
+}

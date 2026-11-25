@@ -1,0 +1,666 @@
+{
+  "schema_version": 1,
+  "ltc_fps": 25,
+  "clips": [
+    {
+      "source": "ALEKIL_251203_BEAVERCREEK_DH_GJNKJ2_POS1.MP4",
+      "athlete_code": "ALEKIL",
+      "position": 1,
+      "video_fps": "50/1",
+      "duration_s": 27.84,
+      "status": "decoded",
+      "spans": [
+        {
+          "start_video_s": 0.033792,
+          "end_video_s": 27.753979,
+          "start_utc_s": 66111.559994,
+          "end_utc_s": 66139.279987,
+          "start_ltc": "18:21:51:14",
+          "end_ltc": "18:22:19:07",
+          "decoded_frames": 694,
+          "max_fit_error_s": 2.4e-05
+        }
+      ]
+    },
+    {
+      "source": "ALEKIL_251203_BEAVERCREEK_DH_GJNKJ2_POS2.MP4",
+      "athlete_code": "ALEKIL",
+      "position": 2,
+      "video_fps": "50/1",
+      "duration_s": 28.8,
+      "status": "decoded",
+      "spans": [
+        {
+          "start_video_s": 0.002979,
+          "end_video_s": 28.723146,
+          "start_utc_s": 66123.960033,
+          "end_utc_s": 66152.680007,
+          "start_ltc": "18:22:03:24",
+          "end_ltc": "18:22:32:17",
+          "decoded_frames": 719,
+          "max_fit_error_s": 4.8e-05
+        }
+      ]
+    },
+    {
+      "source": "ALEKIL_251203_BEAVERCREEK_DH_GJNKJ2_POS3.MP4",
+      "athlete_code": "ALEKIL",
+      "position": 3,
+      "video_fps": "50/1",
+      "duration_s": 21.12,
+      "status": "decoded",
+      "spans": [
+        {
+          "start_video_s": 0.031167,
+          "end_video_s": 21.030854,
+          "start_utc_s": 66146.680004,
+          "end_utc_s": 66167.679997,
+          "start_ltc": "18:22:26:17",
+          "end_ltc": "18:22:47:17",
+          "decoded_frames": 526,
+          "max_fit_error_s": 2.4e-05
+        }
+      ]
+    },
+    {
+      "source": "ALEKIL_251203_BEAVERCREEK_DH_GJNKJ2_POS4.MP4",
+      "athlete_code": "ALEKIL",
+      "position": 4,
+      "video_fps": "24000/1001",
+      "duration_s": 27.027,
+      "status": "decoded",
+      "spans": [
+        {
+          "start_video_s": 0.140958,
+          "end_video_s": 4.140958,
+          "start_utc_s": 66154.8,
+          "end_utc_s": 66158.8,
+          "start_ltc": "18:22:34:20",
+          "end_ltc": "18:22:38:20",
+          "decoded_frames": 18,
+          "max_fit_error_s": 0.0
+        },
+        {
+          "start_video_s": 4.540958,
+          "end_video_s": 8.180958,
+          "start_utc_s": 66159.240001,
+          "end_utc_s": 66162.879997,
+          "start_ltc": "18:22:39:06",
+          "end_ltc": "18:22:42:22",
+          "decoded_frames": 17,
+          "max_fit_error_s": 1.8e-05
+        },
+        {
+          "start_video_s": 9.580979,
+          "end_video_s": 26.820958,
+          "start_utc_s": 66164.24002,
+          "end_utc_s": 66181.479993,
+          "start_ltc": "18:22:44:06",
+          "end_ltc": "18:23:01:12",
+          "decoded_frames": 72,
+          "max_fit_error_s": 2e-05
+        }
+      ]
+    },
+    {
+      "source": "ALEKIL_251203_BEAVERCREEK_DH_GJNKJ2_POS5.MP4",
+      "athlete_code": "ALEKIL",
+      "position": 5,
+      "video_fps": "50/1",
+      "duration_s": 32.64,
+      "status": "decoded",
+      "spans": [
+        {
+          "start_video_s": 0.016688,
+          "end_video_s": 32.576333,
+          "start_utc_s": 66156.39999,
+          "end_utc_s": 66188.960012,
+          "start_ltc": "18:22:36:10",
+          "end_ltc": "18:23:08:24",
+          "decoded_frames": 815,
+          "max_fit_error_s": 2.2e-05
+        }
+      ]
+    },
+    {
+      "source": "ALEKIL_251203_BEAVERCREEK_DH_GJNKJ2_POS6.mp4",
+      "athlete_code": "ALEKIL",
+      "position": 6,
+      "video_fps": "25/1",
+      "duration_s": 15.8,
+      "status": "decoded",
+      "spans": [
+        {
+          "start_video_s": 0.090063,
+          "end_video_s": 15.690062,
+          "start_utc_s": 66176.48,
+          "end_utc_s": 66192.080001,
+          "start_ltc": "18:22:56:12",
+          "end_ltc": "18:23:12:02",
+          "decoded_frames": 66,
+          "max_fit_error_s": 2e-05
+        }
+      ]
+    },
+    {
+      "source": "ALEKIL_251203_BEAVERCREEK_DH_GJNKJ2_POS7.MP4",
+      "athlete_code": "ALEKIL",
+      "position": 7,
+      "video_fps": "50/1",
+      "duration_s": 18.24,
+      "status": "decoded",
+      "spans": [
+        {
+          "start_video_s": 0.266062,
+          "end_video_s": 18.066063,
+          "start_utc_s": 66186.08,
+          "end_utc_s": 66203.88,
+          "start_ltc": "18:23:06:02",
+          "end_ltc": "18:23:23:22",
+          "decoded_frames": 75,
+          "max_fit_error_s": 0.0
+        }
+      ]
+    },
+    {
+      "source": "ALEKIL_251203_BEAVERCREEK_DH_GJNKJ2_POS8.MP4",
+      "athlete_code": "ALEKIL",
+      "position": 8,
+      "video_fps": "50/1",
+      "duration_s": 16.32,
+      "status": "decoded",
+      "spans": [
+        {
+          "start_video_s": 0.076104,
+          "end_video_s": 16.076104,
+          "start_utc_s": 66195.24,
+          "end_utc_s": 66211.24,
+          "start_ltc": "18:23:15:06",
+          "end_ltc": "18:23:31:06",
+          "decoded_frames": 68,
+          "max_fit_error_s": 0.0
+        }
+      ]
+    },
+    {
+      "source": "BRYBEN_251203_BEAVERCREEK_DH_GJNKJ2_POS1.MP4",
+      "athlete_code": "BRYBEN",
+      "position": 1,
+      "video_fps": "50/1",
+      "duration_s": 26.88,
+      "status": "decoded",
+      "spans": [
+        {
+          "start_video_s": 0.043167,
+          "end_video_s": 26.803354,
+          "start_utc_s": 67553.079993,
+          "end_utc_s": 67579.840013,
+          "start_ltc": "18:45:53:02",
+          "end_ltc": "18:46:19:21",
+          "decoded_frames": 670,
+          "max_fit_error_s": 2.4e-05
+        }
+      ]
+    },
+    {
+      "source": "BRYBEN_251203_BEAVERCREEK_DH_GJNKJ2_POS2.MP4",
+      "athlete_code": "BRYBEN",
+      "position": 2,
+      "video_fps": "50/1",
+      "duration_s": 28.32,
+      "status": "decoded",
+      "spans": [
+        {
+          "start_video_s": 0.010917,
+          "end_video_s": 28.251021,
+          "start_utc_s": 67564.840017,
+          "end_utc_s": 67593.079976,
+          "start_ltc": "18:46:04:21",
+          "end_ltc": "18:46:33:02",
+          "decoded_frames": 707,
+          "max_fit_error_s": 4.8e-05
+        }
+      ]
+    },
+    {
+      "source": "BRYBEN_251203_BEAVERCREEK_DH_GJNKJ2_POS3.MP4",
+      "athlete_code": "BRYBEN",
+      "position": 3,
+      "video_fps": "50/1",
+      "duration_s": 20.64,
+      "status": "decoded",
+      "spans": [
+        {
+          "start_video_s": 0.00975,
+          "end_video_s": 20.569417,
+          "start_utc_s": 67587.560011,
+          "end_utc_s": 67608.119988,
+          "start_ltc": "18:46:27:14",
+          "end_ltc": "18:46:48:03",
+          "decoded_frames": 515,
+          "max_fit_error_s": 2.4e-05
+        }
+      ]
+    },
+    {
+      "source": "BRYBEN_251203_BEAVERCREEK_DH_GJNKJ2_POS4.MP4",
+      "athlete_code": "BRYBEN",
+      "position": 4,
+      "video_fps": "24000/1001",
+      "duration_s": 27.5275,
+      "status": "decoded",
+      "spans": [
+        {
+          "start_video_s": 0.034958,
+          "end_video_s": 27.474979,
+          "start_utc_s": 67595.799981,
+          "end_utc_s": 67623.239999,
+          "start_ltc": "18:46:35:20",
+          "end_ltc": "18:47:03:06",
+          "decoded_frames": 114,
+          "max_fit_error_s": 2e-05
+        }
+      ]
+    },
+    {
+      "source": "BRYBEN_251203_BEAVERCREEK_DH_GJNKJ2_POS5.MP4",
+      "athlete_code": "BRYBEN",
+      "position": 5,
+      "video_fps": "50/1",
+      "duration_s": 33.12,
+      "status": "decoded",
+      "spans": [
+        {
+          "start_video_s": 0.03925,
+          "end_video_s": 33.078833,
+          "start_utc_s": 67597.159992,
+          "end_utc_s": 67630.199984,
+          "start_ltc": "18:46:37:04",
+          "end_ltc": "18:47:10:05",
+          "decoded_frames": 827,
+          "max_fit_error_s": 2.2e-05
+        }
+      ]
+    },
+    {
+      "source": "BRYBEN_251203_BEAVERCREEK_DH_GJNKJ2_POS6.mp4",
+      "athlete_code": "BRYBEN",
+      "position": 6,
+      "video_fps": "25/1",
+      "duration_s": 15.8,
+      "status": "decoded",
+      "spans": [
+        {
+          "start_video_s": 0.050042,
+          "end_video_s": 15.650042,
+          "start_utc_s": 67617.720002,
+          "end_utc_s": 67633.319999,
+          "start_ltc": "18:46:57:18",
+          "end_ltc": "18:47:13:08",
+          "decoded_frames": 66,
+          "max_fit_error_s": 1.9e-05
+        }
+      ]
+    },
+    {
+      "source": "BRYBEN_251203_BEAVERCREEK_DH_GJNKJ2_POS7.MP4",
+      "athlete_code": "BRYBEN",
+      "position": 7,
+      "video_fps": "50/1",
+      "duration_s": 19.2,
+      "status": "decoded",
+      "spans": [
+        {
+          "start_video_s": 0.083771,
+          "end_video_s": 18.963771,
+          "start_utc_s": 67626.0,
+          "end_utc_s": 67644.88,
+          "start_ltc": "18:47:06:00",
+          "end_ltc": "18:47:24:22",
+          "decoded_frames": 80,
+          "max_fit_error_s": 0.0
+        }
+      ]
+    },
+    {
+      "source": "BRYBEN_251203_BEAVERCREEK_DH_GJNKJ2_POS8.MP4",
+      "athlete_code": "BRYBEN",
+      "position": 8,
+      "video_fps": "50/1",
+      "duration_s": 16.32,
+      "status": "decoded",
+      "spans": [
+        {
+          "start_video_s": 0.438208,
+          "end_video_s": 15.998208,
+          "start_utc_s": 67637.24,
+          "end_utc_s": 67652.8,
+          "start_ltc": "18:47:17:06",
+          "end_ltc": "18:47:32:20",
+          "decoded_frames": 67,
+          "max_fit_error_s": 0.0
+        }
+      ]
+    },
+    {
+      "source": "RYACOC_251203_BEAVERCREEK_DH_GJNKJ2_POS1.MP4",
+      "athlete_code": "RYACOC",
+      "position": 1,
+      "video_fps": "50/1",
+      "duration_s": 27.36,
+      "status": "decoded",
+      "spans": [
+        {
+          "start_video_s": 0.003667,
+          "end_video_s": 27.283833,
+          "start_utc_s": 67632.999994,
+          "end_utc_s": 67660.279991,
+          "start_ltc": "18:47:13:00",
+          "end_ltc": "18:47:40:07",
+          "decoded_frames": 683,
+          "max_fit_error_s": 2.4e-05
+        }
+      ]
+    },
+    {
+      "source": "RYACOC_251203_BEAVERCREEK_DH_GJNKJ2_POS2.MP4",
+      "athlete_code": "RYACOC",
+      "position": 2,
+      "video_fps": "50/1",
+      "duration_s": 27.84,
+      "status": "decoded",
+      "spans": [
+        {
+          "start_video_s": 0.011312,
+          "end_video_s": 27.771458,
+          "start_utc_s": 67645.719998,
+          "end_utc_s": 67673.480003,
+          "start_ltc": "18:47:25:18",
+          "end_ltc": "18:47:53:12",
+          "decoded_frames": 695,
+          "max_fit_error_s": 4.7e-05
+        }
+      ]
+    },
+    {
+      "source": "RYACOC_251203_BEAVERCREEK_DH_GJNKJ2_POS3.MP4",
+      "athlete_code": "RYACOC",
+      "position": 3,
+      "video_fps": "50/1",
+      "duration_s": 20.64,
+      "status": "decoded",
+      "spans": [
+        {
+          "start_video_s": 0.008542,
+          "end_video_s": 20.568229,
+          "start_utc_s": 67667.84001,
+          "end_utc_s": 67688.400008,
+          "start_ltc": "18:47:47:21",
+          "end_ltc": "18:48:08:10",
+          "decoded_frames": 515,
+          "max_fit_error_s": 2.4e-05
+        }
+      ]
+    },
+    {
+      "source": "RYACOC_251203_BEAVERCREEK_DH_GJNKJ2_POS4.MP4",
+      "athlete_code": "RYACOC",
+      "position": 4,
+      "video_fps": "24000/1001",
+      "duration_s": 27.5275,
+      "status": "decoded",
+      "spans": [
+        {
+          "start_video_s": 0.208979,
+          "end_video_s": 27.369,
+          "start_utc_s": 67675.719991,
+          "end_utc_s": 67702.879997,
+          "start_ltc": "18:47:55:18",
+          "end_ltc": "18:48:22:22",
+          "decoded_frames": 116,
+          "max_fit_error_s": 1.7e-05
+        }
+      ]
+    },
+    {
+      "source": "RYACOC_251203_BEAVERCREEK_DH_GJNKJ2_POS5.MP4",
+      "athlete_code": "RYACOC",
+      "position": 5,
+      "video_fps": "50/1",
+      "duration_s": 32.16,
+      "status": "decoded",
+      "spans": [
+        {
+          "start_video_s": 0.038271,
+          "end_video_s": 32.117875,
+          "start_utc_s": 67677.480007,
+          "end_utc_s": 67709.560009,
+          "start_ltc": "18:47:57:12",
+          "end_ltc": "18:48:29:14",
+          "decoded_frames": 803,
+          "max_fit_error_s": 2.3e-05
+        }
+      ]
+    },
+    {
+      "source": "RYACOC_251203_BEAVERCREEK_DH_GJNKJ2_POS6.mp4",
+      "athlete_code": "RYACOC",
+      "position": 6,
+      "video_fps": "25/1",
+      "duration_s": 15.32,
+      "status": "decoded",
+      "spans": [
+        {
+          "start_video_s": 0.050375,
+          "end_video_s": 15.210375,
+          "start_utc_s": 67697.48,
+          "end_utc_s": 67712.64,
+          "start_ltc": "18:48:17:12",
+          "end_ltc": "18:48:32:16",
+          "decoded_frames": 63,
+          "max_fit_error_s": 0.0
+        }
+      ]
+    },
+    {
+      "source": "RYACOC_251203_BEAVERCREEK_DH_GJNKJ2_POS7.MP4",
+      "athlete_code": "RYACOC",
+      "position": 7,
+      "video_fps": "50/1",
+      "duration_s": 18.72,
+      "status": "decoded",
+      "spans": [
+        {
+          "start_video_s": 0.174063,
+          "end_video_s": 18.574063,
+          "start_utc_s": 67706.08,
+          "end_utc_s": 67724.48,
+          "start_ltc": "18:48:26:02",
+          "end_ltc": "18:48:44:12",
+          "decoded_frames": 77,
+          "max_fit_error_s": 0.0
+        }
+      ]
+    },
+    {
+      "source": "RYACOC_251203_BEAVERCREEK_DH_GJNKJ2_POS8.MP4",
+      "athlete_code": "RYACOC",
+      "position": 8,
+      "video_fps": "50/1",
+      "duration_s": 16.32,
+      "status": "decoded",
+      "spans": [
+        {
+          "start_video_s": 0.241854,
+          "end_video_s": 16.081854,
+          "start_utc_s": 67716.24,
+          "end_utc_s": 67732.08,
+          "start_ltc": "18:48:36:06",
+          "end_ltc": "18:48:52:02",
+          "decoded_frames": 67,
+          "max_fit_error_s": 0.0
+        }
+      ]
+    },
+    {
+      "source": "ERIARV_251203_BEAVERCREEK_DH_GJNKJ2_POS1.MP4",
+      "athlete_code": "ERIARV",
+      "position": 1,
+      "video_fps": "50/1",
+      "duration_s": 28.32,
+      "status": "decoded",
+      "spans": [
+        {
+          "start_video_s": 0.047125,
+          "end_video_s": 28.247333,
+          "start_utc_s": 70499.680012,
+          "end_utc_s": 70527.880018,
+          "start_ltc": "19:34:59:17",
+          "end_ltc": "19:35:27:22",
+          "decoded_frames": 706,
+          "max_fit_error_s": 2.4e-05
+        }
+      ]
+    },
+    {
+      "source": "ERIARV_251203_BEAVERCREEK_DH_GJNKJ2_POS2.MP4",
+      "athlete_code": "ERIARV",
+      "position": 2,
+      "video_fps": "50/1",
+      "duration_s": 23.04,
+      "status": "decoded",
+      "spans": [
+        {
+          "start_video_s": 0.016146,
+          "end_video_s": 22.976333,
+          "start_utc_s": 70518.680008,
+          "end_utc_s": 70541.640005,
+          "start_ltc": "19:35:18:17",
+          "end_ltc": "19:35:41:16",
+          "decoded_frames": 575,
+          "max_fit_error_s": 4.8e-05
+        }
+      ]
+    },
+    {
+      "source": "ERIARV_251203_BEAVERCREEK_DH_GJNKJ2_POS3.MP4",
+      "athlete_code": "ERIARV",
+      "position": 3,
+      "video_fps": "50/1",
+      "duration_s": 22.56,
+      "status": "decoded",
+      "spans": [
+        {
+          "start_video_s": 0.017292,
+          "end_video_s": 22.496979,
+          "start_utc_s": 70534.159994,
+          "end_utc_s": 70556.640007,
+          "start_ltc": "19:35:34:04",
+          "end_ltc": "19:35:56:16",
+          "decoded_frames": 563,
+          "max_fit_error_s": 2.4e-05
+        }
+      ]
+    },
+    {
+      "source": "ERIARV_251203_BEAVERCREEK_DH_GJNKJ2_POS4.MP4",
+      "athlete_code": "ERIARV",
+      "position": 4,
+      "video_fps": "24000/1001",
+      "duration_s": 25.5255,
+      "status": "decoded",
+      "spans": [
+        {
+          "start_video_s": 0.139813,
+          "end_video_s": 25.379812,
+          "start_utc_s": 70545.240002,
+          "end_utc_s": 70570.48,
+          "start_ltc": "19:35:45:06",
+          "end_ltc": "19:36:10:12",
+          "decoded_frames": 107,
+          "max_fit_error_s": 2e-05
+        }
+      ]
+    },
+    {
+      "source": "ERIARV_251203_BEAVERCREEK_DH_GJNKJ2_POS5.MP4",
+      "athlete_code": "ERIARV",
+      "position": 5,
+      "video_fps": "50/1",
+      "duration_s": 32.64,
+      "status": "decoded",
+      "spans": [
+        {
+          "start_video_s": 0.034646,
+          "end_video_s": 32.55425,
+          "start_utc_s": 70545.880018,
+          "end_utc_s": 70578.400007,
+          "start_ltc": "19:35:45:22",
+          "end_ltc": "19:36:18:10",
+          "decoded_frames": 814,
+          "max_fit_error_s": 2.3e-05
+        }
+      ]
+    },
+    {
+      "source": "ERIARV_251203_BEAVERCREEK_DH_GJNKJ2_POS6.mp4",
+      "athlete_code": "ERIARV",
+      "position": 6,
+      "video_fps": "25/1",
+      "duration_s": 16.28,
+      "status": "decoded",
+      "spans": [
+        {
+          "start_video_s": 0.121813,
+          "end_video_s": 16.121813,
+          "start_utc_s": 70566.08,
+          "end_utc_s": 70582.08,
+          "start_ltc": "19:36:06:02",
+          "end_ltc": "19:36:22:02",
+          "decoded_frames": 66,
+          "max_fit_error_s": 0.0
+        }
+      ]
+    },
+    {
+      "source": "ERIARV_251203_BEAVERCREEK_DH_GJNKJ2_POS7.MP4",
+      "athlete_code": "ERIARV",
+      "position": 7,
+      "video_fps": "50/1",
+      "duration_s": 17.76,
+      "status": "decoded",
+      "spans": [
+        {
+          "start_video_s": 0.098542,
+          "end_video_s": 17.418542,
+          "start_utc_s": 70576.48,
+          "end_utc_s": 70593.8,
+          "start_ltc": "19:36:16:12",
+          "end_ltc": "19:36:33:20",
+          "decoded_frames": 74,
+          "max_fit_error_s": 0.0
+        }
+      ]
+    },
+    {
+      "source": "ERIARV_251203_BEAVERCREEK_DH_GJNKJ2_POS8.MP4",
+      "athlete_code": "ERIARV",
+      "position": 8,
+      "video_fps": "50/1",
+      "duration_s": 16.8,
+      "status": "decoded",
+      "spans": [
+        {
+          "start_video_s": 0.257792,
+          "end_video_s": 16.657792,
+          "start_utc_s": 70585.24,
+          "end_utc_s": 70601.64,
+          "start_ltc": "19:36:25:06",
+          "end_ltc": "19:36:41:16",
+          "decoded_frames": 70,
+          "max_fit_error_s": 0.0
+        }
+      ]
+    }
+  ]
+}

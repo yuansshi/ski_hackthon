@@ -1,0 +1,133 @@
+{
+  "estimator": "browser_video_only",
+  "reference_athlete": "Ryan Cochran-Siegle",
+  "training_athletes": [],
+  "sample_rate_hz": 10,
+  "shared_landmarks": 8,
+  "estimates_sha256": "711704a9ecafbd36577a940c70ce86e6954b3b3708ea9a8cf01f283792338476",
+  "notes": [
+    "The browser estimates speed and distance from course dimensions, decoded audio timecode, and manually matched video landmarks. All interior distances were left blank.",
+    "This evaluation replays archival LTC decoded from the real source audio. It scores the same estimation and CSV export functions the browser uses.",
+    "The sample has no verified finish cue. Estimates stop at the STIFEL arch. Rows outside annotated timecode coverage are absent.",
+    "Elapsed alignment uses each source’s reported start. Raw UTC alignment preserves the disagreement between the camera and GPS clock starts."
+  ],
+  "holdout": [
+    {
+      "athlete": "Bryce Bennett",
+      "video_rows": 849,
+      "video_minus_gps_start_utc_s": 34.491,
+      "finish_kind": "unobserved",
+      "elapsed_aligned": {
+        "distance_m": {
+          "matched_rows": 849,
+          "bias": 70.534,
+          "mae": 76.44,
+          "rmse": 90.09
+        },
+        "speed_kmh": {
+          "matched_rows": 849,
+          "bias": 6.12,
+          "mae": 11.845,
+          "rmse": 14.634
+        }
+      },
+      "utc_aligned": {
+        "distance_m": {
+          "matched_rows": 559,
+          "bias": -830.608,
+          "mae": 830.608,
+          "rmse": 833.373
+        },
+        "speed_kmh": {
+          "matched_rows": 559,
+          "bias": -12.797,
+          "mae": 16.451,
+          "rmse": 21.669
+        }
+      },
+      "coverage": {
+        "elapsed_through_last_landmark_s": 89.285,
+        "estimated_last_landmark_distance_m": 2302.02,
+        "covered_distance_intervals": 4
+      }
+    },
+    {
+      "athlete": "Aleksander Aamodt Kilde",
+      "video_rows": 844,
+      "video_minus_gps_start_utc_s": 34.43,
+      "finish_kind": "unobserved",
+      "elapsed_aligned": {
+        "distance_m": {
+          "matched_rows": 844,
+          "bias": 63.473,
+          "mae": 69.794,
+          "rmse": 81.879
+        },
+        "speed_kmh": {
+          "matched_rows": 844,
+          "bias": 5.376,
+          "mae": 11.513,
+          "rmse": 14.269
+        }
+      },
+      "utc_aligned": {
+        "distance_m": {
+          "matched_rows": 554,
+          "bias": -850.947,
+          "mae": 850.947,
+          "rmse": 854.195
+        },
+        "speed_kmh": {
+          "matched_rows": 554,
+          "bias": -13.974,
+          "mae": 19.215,
+          "rmse": 25.006
+        }
+      },
+      "coverage": {
+        "elapsed_through_last_landmark_s": 88.398,
+        "estimated_last_landmark_distance_m": 2302.02,
+        "covered_distance_intervals": 4
+      }
+    },
+    {
+      "athlete": "Erik Arvidsson",
+      "video_rows": 771,
+      "video_minus_gps_start_utc_s": 34.635,
+      "finish_kind": "unobserved",
+      "elapsed_aligned": {
+        "distance_m": {
+          "matched_rows": 771,
+          "bias": 75.175,
+          "mae": 81.733,
+          "rmse": 94.173
+        },
+        "speed_kmh": {
+          "matched_rows": 771,
+          "bias": 4.414,
+          "mae": 11.081,
+          "rmse": 13.648
+        }
+      },
+      "utc_aligned": {
+        "distance_m": {
+          "matched_rows": 482,
+          "bias": -823.177,
+          "mae": 823.177,
+          "rmse": 826.912
+        },
+        "speed_kmh": {
+          "matched_rows": 482,
+          "bias": -13.636,
+          "mae": 18.265,
+          "rmse": 23.636
+        }
+      },
+      "coverage": {
+        "elapsed_through_last_landmark_s": 90.209,
+        "estimated_last_landmark_distance_m": 2302.02,
+        "covered_distance_intervals": 6
+      }
+    }
+  ]
+}
